@@ -1,1 +1,1 @@
-# promo-p-module-2-pair-12-sprint-2-ada-kitten
+# promo-p-module-2-pair-6-sprint-1-ada-kitten
