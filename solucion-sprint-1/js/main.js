@@ -16,7 +16,7 @@ const input_search_desc = document.querySelector('.js_in_search_desc');
 
 
 //Objetos con cada gatito
-const kittenData_1 = {
+/*const kittenData_1 = {
     image: "https://ychef.files.bbci.co.uk/976x549/p07ryyyj.jpg",
     name: "Anastacio",
     desc: "Ruiseño, juguetón, le guta estar tranquilo y que nadie le moleste. Es una maravilla acariciarle!",
@@ -35,7 +35,7 @@ const kittenData_3 = {
     race: "British Shorthair",
 };
 
-const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];
+const kittenDataList = [kittenData_1, kittenData_2, kittenData_3];*/
 
 //Funciones
 function renderKitten(kittenData) {
@@ -43,7 +43,7 @@ function renderKitten(kittenData) {
     <article>
       <img
         class="card_img"
-        src=${kittenData.image}
+        src=${kittenData.url}
         alt="gatito"
       />
       <h3 class="card_title">${kittenData.name}</h3>
@@ -114,17 +114,25 @@ function filterKitten(event) {
     }
 }
 
-//Mostrar el litado de gatitos en ell HTML
-renderKittenList(kittenDataList);
-
 //Eventos
 linkNewFormElememt.addEventListener("click", handleClickNewCatForm);
 searchButton.addEventListener("click", filterKitten);
 buttonAdd.addEventListener("click", addNewKitten);
 buttonCancelForm.addEventListener("click", cancelNewKitten);
 
+//-----------------
 
+let kittenDataList=[];
 
+//Mostrar el litado de gatitos en ell HTML
+renderKittenList(kittenDataList);
 
+fetch('https://adalab-api.herokuapp.com/api/kittens/ruadaslucia')
+    .then( (res) => res.json() )//frase en comun
+    .then( (data) => {//reespuesta
+        kittenDataList=data.results;//igualamos con lo que queremos =.results (ver en las devtools)
+        renderKittenList(kittenDataList);//los pintamos
+    })
 
+//(param)  =>  { console.log(param)  }
 
