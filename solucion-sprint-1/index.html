@@ -22,14 +22,13 @@
     <title>AdaKitten</title>
   </head>
   <body>
-    <!-- header -->
     <header class="header">
       <section class="logo">
         <img class="img" src="./img/favicon.png" alt="Logo de Adacats" />
         <h1>AdaKitten</h1>
         <nav class="menu-nav">
           <ul class="menu">
-            <li class="item">
+            <li class="item js-button-new-form">
               <span class="fas fa-plus-circle"> </span>
             </li>
           </ul>
@@ -38,8 +37,7 @@
     </header>
 
     <main>
-      <!-- formulario -->
-      <section class="new-form collapsed js-new-form">
+      <section class="new-form js-new-form collapsed">
         <h2 class="title">¿Agregamos un nuevo gatito a Adalab?</h2>
         <form class="form">
           <input
@@ -54,17 +52,16 @@
             placeholder="Nombre"
             required
           />
-          <input class="input" type="text" placeholder="Raza" />
+          <input class="input js-input-race" type="text" placeholder="Raza" />
           <input
             class="input js-input-desc"
             type="text"
             placeholder="Descripción"
             required
           />
-          <label class=""></label>
+          <label class="js-label-error"></label>
           <button class="button js-btn-add">Añadir</button>
           <button class="button-cancel js-btn-cancel">Cancelar</button>
-          <div class="js-message"></div>
         </form>
       </section>
 
@@ -89,11 +86,11 @@
             id="raza"
           />
 
-          <button class="button">Buscar</button>
+          <button class="button js-button-search">Buscar</button>
         </form>
       </section>
-      <!-- listado gatitos -->
-      <section class="data">
+
+      <section class="data js-data">
         <ul class="list js-list"></ul>
       </section>
     </main>
